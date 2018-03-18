@@ -124,7 +124,7 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     print("Training...")
     print()
 
-    for ep in epoches:
+    for ep in epochs:
         print("EPOCH {}".format(ep + 1))
         for image, label in get_batches_fn(batch_size):
             # Training
