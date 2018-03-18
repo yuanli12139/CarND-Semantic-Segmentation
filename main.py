@@ -5,10 +5,12 @@ import warnings
 from distutils.version import LooseVersion
 import project_tests as tests
 
+os.environ['CUDA_VISIBLE_DEVICES'] = '' # force to use CPU as GPU runs out memory even with batch_size = 1
 
 # Check TensorFlow Version
 assert LooseVersion(tf.__version__) >= LooseVersion('1.0'), 'Please use TensorFlow version 1.0 or newer.  You are using {}'.format(tf.__version__)
 print('TensorFlow Version: {}'.format(tf.__version__))
+
 
 # Check for a GPU
 if not tf.test.gpu_device_name():
